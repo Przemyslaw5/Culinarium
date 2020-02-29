@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Culinarium</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div>
+                <ul class="horizontal-menu">
+                    <li><img class="logo" src="images/logo.png" /></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#best_recipes">Best recipes</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="vertical-nav">
+                <button class="nav-button" type="button">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="vertical-menu">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#best_recipes">Best recipes</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+
+
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="welcome">
+                <div style="height:130px"></div>
+                <h1>Welcome to Culinarium!</h1>
+                <h2 style="margin: 0 50px">If you have no talent for cooking and your budget is limited then this site is created for you!</h2>
+            </div>
+        </section>
+
+        <section>
+            <div onclick="openAddingRecipe()" on style="font-size: 30px; font-weight: bold" id="add-button-main" class="add-button">
+                Add Recipe  &#129050;
+            </div>
+            <div id="add-recipe-move" class="add-recipe">
+                <div onclick="closeAddingRecipe()" id="close-adding-recipe" class="close-add-button">&times;</div>
+                <h2 >Add Recipe</h2>
+                <form id="add-form-recipe" class="add-form">
+                    <div class="container-recipe">
+                        <div class="add-data">
+                            <label for="form-title">Title</label>
+                            <input id="form-title" type="text" placeholder="Recipe title">
+                            <label for="form-image-first">First image url</label>
+                            <input id="form-image-first" type="text" placeholder="First url image">
+                            <label for="form-image-second">Second image url</label>
+                            <input id="form-image-second" type="text" placeholder="Second url image">
+                        </div>
+                        <div class="add-data">
+                            <label for="form-ingredients">Ingredients:</label>
+                            <textarea id="form-ingredients" rows="6" placeholder="Recipe ingredients"></textarea>
+                        </div>
+                        <div class="add-data">
+                            <label for="form-instructions">Instructions:</label>
+                            <textarea id="form-instructions" rows="6" placeholder="Recipe instructions"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addRecipe()">Add</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about_info">
+                <div>
+                    <h3>About</h3>
+                    <p style="font-style: italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet est non leo congue egestas quis
+                        non felis. <span style="margin:0;padding:0;" class="remove-about">Pellentesque gravida et felis vel ornare. Duis ultricies, ipsum sed fermentum mattis,
+                    purus justo maximus ipsum, et ullamcorper felis arcu in eros. Nam vehicula venenatis ipsum a
+                    scelerisque.</span></p>
+                    <div class="button-div">
+                        <a href="#"><button id="button-about" type="button"><strong>More...</strong></button></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="about_image">
+                <img src="images/about_image.png" />
+            </div>
+        </section>
+
+        <header style="justify-content: center" id="best_recipes" class="best_recipesText">
+            <div>
+                <h3>Check our best recipes</h3>
+                <h2>There are few of them:</h2>
+            </div>
+        </header>
+
+        <section id="all-recipes" class="best_recipes">
+            <article id="Pancakes" class="single_recipe" onclick='changeCurrentRecipe("Pancakes")'>
+                <div class="first-view">
+                    <figure class="grow">
+                        <img src="images/pancake.jpg" />
+                        <figcaption>Pancakes</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Ingredients: </p>
+                    <ul style="text-align: left; list-style-type: circle;" class="ingredients">
+                        <li>1/2 cups all-purpose flour.</li>
+                        <li>2 tablespoons sugar.</li>
+                        <li>2 teaspoons baking powder.</li>
+                        <li>1 teaspoon baking soda.</li>
+                        <li>1 cup milk or buttermilk.</li>
+                        <li>2 large eggs.</li>
+                        <li>1/4 cup melted butter.</li>
+                    </ul>
+                </div>
+                <div class="second-view" >
+                    <figure class="grow">
+                        <img src="images/pancake2.jpg" />
+                        <figcaption>Pancakes</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Prepare: </p>
+                    <p style="font-family: 'Poiret One', cursive; text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate aliquet augue, id
+                        consectetur augue dapibus non. In sed finibus sem. Cras condimentum semper ultrices. Etiam
+                        eu lorem ut ex consectetur porttitor ut vitae arcu. Morbi vehicula dolor eget condimentum
+                        ullamcorper. </p>
+                </div>
+            </article>
+
+            <article id="Snack Party" class="single_recipe" onclick='changeCurrentRecipe("Snack Party")'>
+                <div class="first-view">
+                    <figure class="grow">
+                        <img src="images/snack.png" />
+                        <figcaption>Snack Party</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Ingredients: </p>
+                    <ul style="text-align: left; list-style-type: circle;" class="ingredients">
+                        <li>1/4 cup butter, melted</li>
+                        <li>1/4 cup olive oil</li>
+                        <li>10 slices French bread (1 inch thick)</li>
+                        <li>1 package (4 ounces) crumbled feta cheese</li>
+                        <li>2 to 3 garlic cloves, minced</li>
+                        <li>1 large tomato, seeded and chopped</li>
+                    </ul>
+                </div>
+                <div class="second-view" >
+                    <figure class="grow">
+                        <img src="images/snack2.jpg" />
+                        <figcaption>Snack Party</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Prepare: </p>
+                    <p style="font-family: 'Poiret One', cursive; text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate aliquet augue, id
+                        consectetur augue dapibus non. In sed finibus sem. Cras condimentum semper ultrices. Etiam
+                        eu lorem ut ex consectetur porttitor ut vitae arcu. Morbi vehicula dolor eget condimentum
+                        ullamcorper. </p>
+                </div>
+            </article>
+
+            <article id="Langos" class="single_recipe" onclick='changeCurrentRecipe("Langos")'>
+                <div class="first-view">
+                    <figure class="grow">
+                        <img src="images/langos.png" />
+                        <figcaption>Langos</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Ingredients: </p>
+                    <ul style="text-align: left; list-style-type: circle;" class="ingredients">
+                        <li>1 large potato</li>
+                        <li>2 and 1/2 teaspoons instant yeast</li>
+                        <li>1 teaspoon sugar.</li>
+                        <li>1 and 3/4 cups all-purpose flour.</li>
+                        <li>1 tablespoon vegetable oil.</li>
+                        <li>3/4 teaspoon salt.</li>
+                        <li>1/2 cup milk.</li>
+                    </ul>
+                </div>
+                <div class="second-view" >
+                    <figure class="grow">
+                        <img src="images/langos2.jpg" />
+                        <figcaption>Langos</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Prepare: </p>
+                    <p style="font-family: 'Poiret One', cursive; text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate aliquet augue, id
+                        consectetur augue dapibus non. In sed finibus sem. Cras condimentum semper ultrices. Etiam
+                        eu lorem ut ex consectetur porttitor ut vitae arcu. Morbi vehicula dolor eget condimentum
+                        ullamcorper. </p>
+                </div>
+            </article>
+
+            <article id="Burger" class="single_recipe" onclick='changeCurrentRecipe("Burger")'>
+                <div class="first-view">
+                    <figure class="grow">
+                        <img src="images/burger.png" />
+                        <figcaption>Burger</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Ingredients: </p>
+                    <ul style="text-align: left; list-style-type: circle;" class="ingredients">
+                        <li>1 pound ground lean (7% fat) beef.</li>
+                        <li>1 large egg.</li>
+                        <li>1/2 cup minced onion.</li>
+                        <li>1/4 cup fine dried bread crumbs.</li>
+                        <li>1 tablespoon Worcestershire.</li>
+                        <li>1 or 2 cloves garlic, peeled and minced.</li>
+                        <li>About 1/2 teaspoon salt.</li>
+                        <li>About 1/4 teaspoon pepper.</li>
+                    </ul>
+                </div>
+                <div class="second-view" >
+                    <figure class="grow">
+                        <img src="images/burger2.jpg" />
+                        <figcaption>Burger</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Prepare: </p>
+                    <p style="font-family: 'Poiret One', cursive; text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate aliquet augue, id
+                        consectetur augue dapibus non. In sed finibus sem. Cras condimentum semper ultrices. Etiam
+                        eu lorem ut ex consectetur porttitor ut vitae arcu. Morbi vehicula dolor eget condimentum
+                        ullamcorper. </p>
+                </div>
+            </article>
+
+            <article id="Fish" class="single_recipe" onclick='changeCurrentRecipe("Fish")'>
+                <div class="first-view">
+                    <figure class="grow">
+                        <img src="images/fish.jpg" />
+                        <figcaption>Fish</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Ingredients: </p>
+                    <ul style="text-align: left; list-style-type: circle;" class="ingredients">
+                        <li>1 pounds center-cut salmon fillets</li>
+                        <li>1/4 teaspoon salt, or to taste</li>
+                        <li>1/4 cup reduced-fat sour cream</li>
+                        <li>2 tablespoons stone-ground mustard</li>
+                        <li>2 teaspoons lemon juice</li>
+                        <li>Freshly ground pepper, to taste</li>
+                        <li>Lemon wedges</li>
+                    </ul>
+                </div>
+                <div class="second-view" >
+                    <figure class="grow">
+                        <img src="images/fish2.jpg" />
+                        <figcaption>Fish</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Prepare: </p>
+                    <p style="font-family: 'Poiret One', cursive; text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate aliquet augue, id
+                        consectetur augue dapibus non. In sed finibus sem. Cras condimentum semper ultrices. Etiam
+                        eu lorem ut ex consectetur porttitor ut vitae arcu. Morbi vehicula dolor eget condimentum
+                        ullamcorper. </p>
+                </div>
+            </article>
+
+            <article id="Dumplings" class="single_recipe" onclick='changeCurrentRecipe("Dumplings")'>
+                <div class="first-view">
+                    <figure class="grow">
+                        <img src="images/dumplings.png" />
+                        <figcaption>Dumplings</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Ingredients: </p>
+                    <ul style="text-align: left; list-style-type: circle;" class="ingredients">
+                        <li>1 pound well-ground, fatty pork</li>
+                        <li>1 pound Napa cabbage</li>
+                        <li>1 tablespoon fresh grated ginger</li>
+                        <li>2 tablespoons water</li>
+                        <li>2 scallions</li>
+                        <li>4 tablespoons soy sauce</li>
+                        <li>1 teaspoon fine salt</li>
+                        <li>1 cup cold water</li>
+                    </ul>
+                </div>
+                <div class="second-view" >
+                    <figure class="grow">
+                        <img src="images/dumplings2.jpg" />
+                        <figcaption>Dumplings</figcaption>
+                    </figure>
+
+                    <p style="text-align: left; text-decoration: underline">Prepare: </p>
+                    <p style="font-family: 'Poiret One', cursive; text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate aliquet augue, id
+                        consectetur augue dapibus non. In sed finibus sem. Cras condimentum semper ultrices. Etiam
+                        eu lorem ut ex consectetur porttitor ut vitae arcu. Morbi vehicula dolor eget condimentum
+                        ullamcorper. </p>
+                </div>
+            </article>
+        </section>
+            <div class="button-div">
+                <a href="#"><button id="button-recipe" type="button"><strong>More...</strong></button></a>
+            </div>
+
+
+
+
+        <section id="gallery">
+            <header>
+                <div>
+                    <h3>Gallery</h3>
+                </div>
+            </header>
+            <div class="w3-content" style="justify-content: center; width: 100%">
+                <img class="mySlides center" src="images/1.jpg" style="width:50%" alt="picture1">
+                <img class="mySlides center" src="images/2.jpg" style="width:50%" alt="picture2">
+                <img class="mySlides center" src="images/3.jpg" style="width:50%" alt="picture3">
+                <img class="mySlides center" src="images/4.jpg" style="width:50%" alt="picture4">
+                <img class="mySlides center" src="images/5.jpg" style="width:50%" alt="picture5">
+                <img class="mySlides center" src="images/6.jpg" style="width:50%" alt="picture6">
+            </div>
+
+            <div class="w3-center">
+                <div class="w3-section">
+                    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+                    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                </div>
+                <button class="w3-button demo" onclick="currentDiv(1)">1</button>
+                <button class="w3-button demo" onclick="currentDiv(2)">2</button>
+                <button class="w3-button demo" onclick="currentDiv(3)">3</button>
+                <button class="w3-button demo" onclick="currentDiv(4)">4</button>
+                <button class="w3-button demo" onclick="currentDiv(5)">5</button>
+                <button class="w3-button demo" onclick="currentDiv(6)">6</button>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <section id="contact">
+            <div class="logo_in_footer">
+                <img src="images/logo_footer.png" />
+            </div>
+            <dic class="email-address">
+                <div class="footer_info email-contact">
+                    <p>Contact with us?</p>
+                </div>
+                <div class="footer_info">
+                    <span style="font-style: italic">culinarium@gmail.com</span>
+                </div>
+            </dic>
+            <div class="footer_info newsletter">
+                <form>
+                    <p>Sign up for Newsletter</p>
+                    <input class="email_form" type="text" name="fname" placeholder="example@domain.com">
+                    <input type="submit" value="Sign up">
+                </form>
+            </div>
+            <div>
+                <div class="footer_info">
+                    <p>Join us</p>
+                </div>
+                <div style="margin-bottom: 20px" class="footer_info">
+                    <a href="#"><img src="images/youtube.png" ></a>
+                    <a href="#"><img src="images/instagram.png" ></a>
+                    <a href="#"><img src="images/facebook.png" ></a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.js"></script>
+    <script src="carousele.js"></script>
+    <script src="validationForm.js"></script>
+    <script src="add-recipe.js"></script>
+    <script src="newRecipes.js"></script>
+
+
+</body>
+</html>
